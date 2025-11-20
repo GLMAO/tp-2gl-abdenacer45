@@ -1,21 +1,52 @@
 package com.polytech.tp;
 
 public class CoursEnLigne extends CoursDecorator {
-    CoursEnLigne(ICours cours) {
-        //TODO: Implémenter le reste ...
+    
+    public CoursEnLigne(ICours cours) {
+        super(cours);
     }
 
     @Override
     public String getDescription() {
-        // TODO Auto-generated method stub
-        
-        return null;
+        return coursDecorated.getDescription() + " (En ligne)";
     }
 
     @Override
     public double getDuree() {
-        // TODO Auto-generated method stub
-        
-        return 0;
-    };
+        return coursDecorated.getDuree();
+    }
+}
+
+class CoursEnAnglais extends CoursDecorator {
+    
+    public CoursEnAnglais(ICours cours) {
+        super(cours);
+    }
+
+    @Override
+    public String getDescription() {
+        return coursDecorated.getDescription() + " (En anglais)";
+    }
+
+    @Override
+    public double getDuree() {
+        return coursDecorated.getDuree();
+    }
+}
+
+class CoursMagistral extends CoursDecorator {
+    
+    public CoursMagistral(ICours cours) {
+        super(cours);
+    }
+
+    @Override
+    public String getDescription() {
+        return coursDecorated.getDescription() + " (Magistral)";
+    }
+
+    @Override
+    public double getDuree() {
+        return coursDecorated.getDuree();
+    }
 }
